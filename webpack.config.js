@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const baseConfig = {
     entry: path.resolve(__dirname, './src/index.ts'),
-    devtool: "inline-source-map",
+    devtool: "eval-source-map",
     mode: 'development',
     module: {
         rules: [
@@ -16,12 +16,12 @@ const baseConfig = {
             {
                 test: /\.ts?$/,
                 use: ['ts-loader'],
-                exclude: /node_modules/,
+                exclude: [path.resolve(__dirname, 'node_modules')],
             },
         ],
     },
     resolve: {
-        extensions: ['ts', '.js'],
+        extensions: ['.ts', '.js'],
     },
     output: {
         filename: 'index.js',
