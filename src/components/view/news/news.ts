@@ -10,7 +10,7 @@ class News {
         news.forEach((item, idx) => {
             const newsClone = <DocumentFragment> newsItemTemp.content.cloneNode(true);
 
-            const newsCloneItem = <HTMLDivElement> newsClone.querySelector('.news__item')
+            const newsCloneItem = <HTMLDivElement> newsClone.querySelector('.news__item');
             if (idx % 2) newsCloneItem.classList.add('alt');
 
             const newsClonePhoto = <HTMLDivElement> newsClone.querySelector('.news__meta-photo');
@@ -28,16 +28,16 @@ class News {
                 .reverse()
                 .join('-');
 
-            const newsCloneDescTittle = <HTMLHeadingElement> newsClone.querySelector('.news__description-title')
+            const newsCloneDescTittle = <HTMLHeadingElement> newsClone.querySelector('.news__description-title');
             newsCloneDescTittle.textContent = item.title;
 
-            const newsCloneDescSource = <HTMLHeadingElement> newsClone.querySelector('.news__description-source')
+            const newsCloneDescSource = <HTMLHeadingElement> newsClone.querySelector('.news__description-source');
             newsCloneDescSource.textContent = item.source.name;
 
-            const newsCloneDescContent = <HTMLParagraphElement> newsClone.querySelector('.news__description-content')
+            const newsCloneDescContent = <HTMLParagraphElement> newsClone.querySelector('.news__description-content');
             newsCloneDescContent.textContent = item.description;
 
-            const newsCloneReadMoreRef = <HTMLAnchorElement> newsClone.querySelector('.news__read-more a')
+            const newsCloneReadMoreRef = <HTMLAnchorElement> newsClone.querySelector('.news__read-more a');
             newsCloneReadMoreRef.setAttribute('href', item.url);
 
             fragment.append(newsClone);
