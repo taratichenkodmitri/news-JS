@@ -6,7 +6,7 @@ interface IAppView {
     sources: Sources;
 }
 
-export class AppView implements IAppView{
+export class AppView implements IAppView {
     public news: News;
     public sources: Sources;
 
