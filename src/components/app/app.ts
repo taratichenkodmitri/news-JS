@@ -16,13 +16,12 @@ class App implements IApp {
     }
 
     start(): void {
-        const sources: HTMLDivElement | null = document.querySelector('.sources');
+        const sources = <HTMLDivElement> document.querySelector('.sources');
 
-        if (sources) {
-            sources.addEventListener('click', (e) => this.controller.getNews(e, (data) => this.view.drawNews(data)));
-            this.controller.getSources((data) => this.view.drawSources(data));
-        }
+        sources.addEventListener('click', (e) => this.controller.getNews(e, (data) => this.view.drawNews(data)));
+        this.controller.getSources((data) => this.view.drawSources(data));
     }
+
 }
 
 export default App;
