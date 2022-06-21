@@ -1,3 +1,5 @@
+import { CallbackFunctionWithoutParam } from '../interfaces/types';
+
 interface ILoader {
     baseLink: string;
     options?: {};
@@ -19,7 +21,7 @@ class Loader implements ILoader {
 
     getResp(
         { endpoint, options = {} }: IURL,
-        callback = () => {
+        callback: CallbackFunctionWithoutParam = () => {
             console.error('No callback for GET response');
         }
     ): void {

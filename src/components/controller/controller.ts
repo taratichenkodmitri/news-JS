@@ -1,8 +1,8 @@
 import AppLoader from './appLoader';
-import * as Events from 'events';
+import { CallbackFunctionWithoutParam } from '../interfaces/types';
 
 class AppController extends AppLoader {
-    getSources(callback) {
+    getSources(callback: CallbackFunctionWithoutParam): void {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -11,7 +11,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e: MouseEvent, callback): void {
+    getNews(e: MouseEvent, callback: CallbackFunctionWithoutParam): void {
         let target = <HTMLDivElement>e.target;
         const newsContainer = <HTMLDivElement>e.currentTarget;
 
