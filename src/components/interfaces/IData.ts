@@ -1,7 +1,7 @@
 export interface IDataNews {
     status: string;
-    totalResults: number;
-    articles: INews[];
+    totalResults?: number;
+    articles?: INews[];
 }
 
 export interface INews {
@@ -18,7 +18,7 @@ export interface INews {
 
 export interface IDataSource {
     status: string;
-    sources: ISource[];
+    sources?: ISource[];
 }
 
 export interface ISource {
