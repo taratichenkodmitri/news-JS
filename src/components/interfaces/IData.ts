@@ -10,10 +10,12 @@ export interface INews {
         name: string;
     };
     author: string;
-    tittle: string;
+    title: string;
     description: string;
     url: string;
     urlToImage: string;
+    publishedAt: string;
+    content: string;
 }
 
 export interface IDataSource {

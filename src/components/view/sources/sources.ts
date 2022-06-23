@@ -1,7 +1,8 @@
 import './sources.css';
+import { ISource } from '../../interfaces/IData';
 
 class Sources {
-    draw(data) {
+    draw(data: ISource[]) {
         const fragment: DocumentFragment = document.createDocumentFragment();
         const sourceItemTemp = <HTMLTemplateElement>document.querySelector('#sourceItemTemp');
 
