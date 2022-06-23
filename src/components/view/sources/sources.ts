@@ -8,7 +8,7 @@ class Sources {
     draw(data: ISource[]) {
         this.data = data;
         const sources = data.length >= 5 ? data.filter((_item, idx) => idx < 5) : data;
-        console.log("sources");
+
         const fragment: DocumentFragment = document.createDocumentFragment();
         const sourceItemTemp = <HTMLTemplateElement>document.querySelector('#sourceItemTemp');
 

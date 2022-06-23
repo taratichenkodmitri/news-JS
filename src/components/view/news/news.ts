@@ -4,7 +4,7 @@ import { INews } from '../../interfaces/IData';
 class News {
     draw(data: INews[]): void {
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
-        console.log("news");
+
         const fragment: DocumentFragment = document.createDocumentFragment();
         const newsItemTemp = <HTMLTemplateElement>document.querySelector('#newsItemTemp');
 
