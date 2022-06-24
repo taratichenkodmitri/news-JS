@@ -2,17 +2,11 @@ import './sources.css';
 import { ISource } from '../../interfaces/IData';
 
 class Sources {
-    public data?: ISource[];
-    public page: number = 0;
-
     draw(data: ISource[]) {
-        this.data = data;
-        const sources = data.length >= 5 ? data.filter((_item, idx) => idx < 5) : data;
-
         const fragment: DocumentFragment = document.createDocumentFragment();
         const sourceItemTemp = <HTMLTemplateElement>document.querySelector('#sourceItemTemp');
 
-        sources.forEach((item) => {
+        data.forEach((item) => {
             const sourceClone = <DocumentFragment>sourceItemTemp.content.cloneNode(true);
 
             const sourceCloneItemName = <HTMLSpanElement>sourceClone.querySelector('.source__item-name');

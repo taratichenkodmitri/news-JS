@@ -1,19 +1,19 @@
 import News from './news/news';
 import Sources from './sources/sources';
 import { IDataNews, IDataSource, INews, ISource } from '../interfaces/IData';
+import { PaginationSources } from '../pagination/paginationSources';
 
 interface IAppView {
     news: News;
-    sources: Sources;
+    paginationSources?: PaginationSources;
 }
 
 export class AppView implements IAppView {
     public news: News;
-    public sources: Sources;
+    public paginationSources?: PaginationSources;
 
     constructor() {
         this.news = new News();
-        this.sources = new Sources();
     }
 
     drawNews(data: IDataNews): void {
@@ -23,7 +23,9 @@ export class AppView implements IAppView {
 
     drawSources(data: IDataSource): void {
         const values: ISource[] = data?.sources ? data?.sources : [];
-        this.sources.draw(values);
+        this.paginationSources = new PaginationSources(values);
+        console.log(values);
+        this.paginationSources.init();
     }
 }
 

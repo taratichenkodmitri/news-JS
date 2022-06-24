@@ -1,23 +1,30 @@
 .sources {
     display: flex;
-    flex-wrap: wrap;
+    gap: 5px;
+    flex-wrap: nowrap;
+    overflow: hidden;
     width: 100%;
-    overflow: auto;
-    align-items: center;
-    justify-content: space-around;
+    height: 80px;
     font: 300 1em 'Fira Sans', sans-serif;
+    align-items: flex-end;
+    position: relative;
 }
 
 .source__item {
+    flex: 1 0 calc(20% - 5px);
+    height: calc(100% - 0.25em);
+    box-sizing: border-box;
     background: none;
     border: 2px solid #30c5ff;
     font: inherit;
     line-height: 1;
-    margin: 0.5em;
-    padding: 1em 2em;
     color: #70d6ff;
-    transition: 0.25s;
+    transition: all 0.25s;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .source__item:hover,
@@ -30,5 +37,16 @@
 
 .source__item-name {
     font-weight: 400;
-    white-space: nowrap;
+}
+
+@media (max-width: 768px) and (min-width: 420px){
+    .source__item {
+        flex: 1 0 calc(25% - 5px);
+    }
+}
+
+@media (max-width: 419px) {
+    .source__item {
+        flex: 1 0 calc(100% / 3 - 5px);
+    }
 }
