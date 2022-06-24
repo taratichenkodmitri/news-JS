@@ -1,7 +1,14 @@
 {
-    "plugins": ["prettier", "import"],
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["prettier", "import", "@typescript-eslint"],
     "extends": [
         "plugin:prettier/recommended",
+        "eslint:recommended",
+
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "prettier"
     ],
     "parserOptions": {
@@ -16,6 +23,11 @@
     "rules": {
         "no-debugger": "off",
         "no-console": 0,
-        "class-methods-use-this": "off"
+        "class-methods-use-this": "off",
+        "@typescript-eslint/no-explicit-any": "error",
+        "no-unused-vars": "off"
+    },
+    "parserOptions": {
+        "project": "./tsconfig.json"
     }
 }
